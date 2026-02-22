@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth | GreenPulse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container auth-container">
+        <div class="auth-card">
+            <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                <span class="icon">🌿</span>
+                <span class="text">GreenPulse</span>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tab-signin" onclick="switchTab('signin')">Sign In</div>
+                <div class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Sign Up</div>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="signin-form" class="auth-form">
+                <div class="form-group">
+                    <label>Email Address (@ch.amrita.edu)</label>
+                    <input type="email" id="signin-email" placeholder="yourname@ch.amrita.edu" required>
+                    <div class="error-msg" id="signin-email-error">Invalid domain. Use Amrita email.</div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signin-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Sign In</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signup-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="signup-email" placeholder="ch.en.u4ece24... @ch.students.amrita.edu"
+                        required>
+                    <div class="error-msg" id="signup-email-error">Only @ch.amrita.edu or @ch.students.amrita.edu
+                        allowed.</div>
+                    <div id="detection-info" class="auto-detect-info"></div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signup-password" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="signup-confirm" placeholder="••••••••" required>
+                    <div class="error-msg" id="signup-pass-error">Passwords do not match.</div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;"
+                    id="signup-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="department_map.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
